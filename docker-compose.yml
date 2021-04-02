@@ -1,0 +1,16 @@
+version: '3.5'
+
+networks:
+  default:
+    driver: bridge
+
+services:
+  chrome-vnc-tor:
+    build: ./
+    image: alexey-vostrikov/chrome-vnc-tor
+    container_name: chrome-vnc-tor
+    hostname: chrome-vnc-tor
+    restart: unless-stopped
+    shm_size: 1g
+    ports:
+      - 5900:5900
