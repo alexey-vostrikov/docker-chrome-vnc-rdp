@@ -1,4 +1,4 @@
-# Google Chrome via VNC or RDP
+# Google Chrome via VNC with TOR
 
 Google Chrome via VNC container based on Ubuntu 16.04 with TOR
 
