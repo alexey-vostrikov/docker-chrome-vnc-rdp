@@ -1,8 +1,8 @@
 FROM ubuntu:16.04
-MAINTAINER SFoxDev <admin@sfoxdev.com>
+MAINTAINER Alexey-Vostrikov <avostrikov@gmail.com>
 
 ENV VNC_PASSWORD="" \
-		DEBIAN_FRONTEND="noninteractive" \
+    DEBIAN_FRONTEND="noninteractive" \
     LC_ALL="C.UTF-8" \
     LANG="en_US.UTF-8" \
     LANGUAGE="en_US.UTF-8"
@@ -20,10 +20,10 @@ RUN echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/so
 			supervisor \
 			x11vnc \
 			fluxbox \
-			mc \
+			mc tor \
 			xfce4 \
 			xrdp ; \
-		apt-get clean ; \
+		apt-get clean ; cat /etc/default/tor | grep RUN_DAEMON ; \
 		rm -rf /var/cache/* /var/log/apt/* /var/lib/apt/lists/* /tmp/*
 
 RUN addgroup chrome-remote-desktop ; \
